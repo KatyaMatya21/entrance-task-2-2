@@ -4,45 +4,299 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Умный дом</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 
-<header>
-  <div>
-    <a href="#">
-      <picture>
-
-      </picture>
+<header class="page-header">
+  <h1 class="visually-hidden">Яндекс Дом</h1>
+  <div class="page-header__inner container">
+    <a class="page-header__logo" href="#">
+      <img src="images/header-logo@1x.png" srcset="images/header-logo@2x.png 2x"  width="108" height="27" alt="Яндекс Дом">
     </a>
-    <nav>
-      <ul>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+    <nav class="page-header__nav header-menu">
+      <ul class="header-menu__list">
+        <li class="header-menu__item header-menu__item--current">
+          <a class="header-menu__link" href="#">Сводка</a>
+        </li>
+        <li class="header-menu__item">
+          <a class="header-menu__link" href="#">Устройства</a>
+        </li>
+        <li class="header-menu__item">
+          <a class="header-menu__link" href="#">Сценарии</a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-  <div>
-    <section>
-      <h2></h2>
+
+  <div class="columns container">
+
+    <section class="columns__item status">
+      <h2 class="title">Главное</h2>
+      <div class="status__display">
+        <div class="status__left">
+          <p class="status__greeting">Привет, Геннадий!</p>
+          <p class="status__info">Двери и окна закрыты, сигнализация включена.</p>
+          <ul class="status__temperature-list">
+            <li class="status__temperature">
+              <span class="status__type">Дома</span>
+              <span class="status__num">+23</span>
+            </li>
+            <li class="status__temperature status__temperature--icon">
+              <span class="status__type">За окном</span>
+              <span class="status__num">+19</span>
+            </li>
+          </ul>
+        </div>
+        <div class="status__right">
+          <div class="status__right-wrap">
+            <ul>
+            <li class="card card--thermometer">
+              <p class="card__title">Philips Cooler</p>
+              <p class="card__info">Начнет охлаждать в 16:30</p>
+            </li>
+            <li class="card card--sun">
+              <p class="card__title">Xiaomi Yeelight LED Smart Bulb</p>
+              <p class="card__info">Включится в 17:00</p>
+            </li>
+            <li class="card card--sun">
+              <p class="card__title">Philips Cooler</p>
+              <p class="card__info">Начнет охлаждать в 16:30</p>
+            </li>
+            <li class="card card--thermometer">
+              <p class="card__title">Xiaomi Yeelight LED Smart Bulb</p>
+              <p class="card__info">Включится в 17:00</p>
+            </li>
+          </ul>
+          </div>
+        </div>
+        <button class="status__scroll status__scroll--down"><span class="visually-hidden">Прокрутить вниз</span></button>
+        <button class="status__scroll status__scroll--up"><span class="visually-hidden">Прокрутить вверх</span></button>
+      </div>
     </section>
-    <section>
-      <h2></h2>
+
+    <section class="columns__item scenario">
+      <h2 class="title">Избранные сценарии</h2>
+      <button class="scenario__scroll scenario__scroll--left scenario__scroll--disabled"><span class="visually-hidden">Влево</span></button>
+      <button class="scenario__scroll scenario__scroll--right scenario__scroll--disabled"><span class="visually-hidden">Вправо</span></button>
+      <div class="scenario__wrap">
+        <div class="scenario__list">
+        <div class="card card--sun card--active">
+          <p class="card__title">Выключить весь свет в доме и во дворе</p>
+        </div>
+        <div class="card card--schedule card--inactive">
+          <p class="card__title">Я ухожу</p>
+        </div>
+        <div class="card card--sun card--active">
+          <p class="card__title">Включить свет в коридоре</p>
+        </div>
+        <div class="card card--thermometer card--active">
+          <p class="card__title">Набрать горячую ванну</p>
+          <p class="card__info">Начнётся в 18:00</p>
+        </div>
+        <div class="card card--thermometer card--active">
+          <p class="card__title">Сделать пол тёплым во всей квартире</p>
+        </div>
+          <div class="card card--sun card--active">
+            <p class="card__title">Выключить весь свет в доме и во дворе</p>
+          </div>
+          <div class="card card--schedule card--inactive">
+            <p class="card__title">Я ухожу</p>
+          </div>
+          <div class="card card--sun card--active">
+            <p class="card__title">Включить свет в коридоре</p>
+          </div>
+          <div class="card card--thermometer card--active">
+            <p class="card__title">Набрать горячую ванну</p>
+            <p class="card__info">Начнётся в 18:00</p>
+          </div>
+          <div class="card card--thermometer card--active">
+            <p class="card__title">Сделать пол тёплым во всей квартире</p>
+          </div>
+      </div>
+      </div>
     </section>
+
   </div>
-  <section>
-    <h2></h2>
+
+  <section class="device">
+    <div class="container">
+      <div class="device__top">
+        <h2 class="title">Избранные устройства</h2>
+        <div class="device__filters device__filters--closed filter">
+          <button class="filter__item filter__item--active" type="button">Все</button>
+          <button class="filter__item" type="button">Кухня</button>
+          <button class="filter__item" type="button">Зал</button>
+          <button class="filter__item" type="button">Лампочки</button>
+          <button class="filter__item" type="button">Камеры</button>
+        </div>
+        <button class="device__scroll device__scroll--left device__scroll--disabled"><span class="visually-hidden">Влево</span></button>
+        <button class="device__scroll device__scroll--right"><span class="visually-hidden">Вправо</span></button>
+      </div>
+    </div>
+    <div class="device__bottom">
+      <div class="device__bottom-wrap">
+        <div class="card card--sun card--active">
+          <p class="card__title">Xiaomi Yeelight LED Smart Bulb</p>
+          <p class="card__info">Включено</p>
+        </div>
+        <div class="card card--sun">
+          <p class="card__title">D-Link Omna 180 Cam</p>
+          <p class="card__info">Включится в 17:00</p>
+        </div>
+        <div class="card card--thermometer">
+          <p class="card__title">Elgato Eve Degree Connected</p>
+          <p class="card__info">Выключено до 17:00</p>
+        </div>
+        <div class="card card--sun">
+          <p class="card__title">LIFX Mini Day & Dusk A60 E27</p>
+          <p class="card__info">Включится в 17:00</p>
+        </div>
+        <div class="card card--sun card--active">
+          <p class="card__title">Xiaomi Mi Air Purifier 2S</p>
+          <p class="card__info">Включено</p>
+        </div>
+        <div class="card card--sun">
+          <p class="card__title">Philips Zhirui</p>
+          <p class="card__info">Выключено</p>
+        </div>
+        <div class="card card--sun">
+          <p class="card__title">LIFX Mini Day & Dusk A60 E27</p>
+          <p class="card__info">Включится в 17:00</p>
+        </div>
+        <div class="card card--sun card--active">
+          <p class="card__title">Xiaomi Mi Air Purifier 2S</p>
+          <p class="card__info">Включено</p>
+        </div>
+        <div class="card card--sun">
+          <p class="card__title">Philips Zhirui</p>
+          <p class="card__info">Выключено</p>
+        </div>
+      </div>
+    </div>
   </section>
+
 </main>
 
-<footer>
-
+<footer class="page-footer">
+  <div class="page-footer__inner container">
+    <nav class="page-footer__nav footer-menu">
+      <ul class="footer-menu__list">
+        <li class="footer-menu__item">
+          <a class="footer-menu__link" href="#">Помощь</a>
+        </li>
+        <li class="footer-menu__item">
+          <a class="footer-menu__link" href="#">Обратная связь</a>
+        </li>
+        <li class="footer-menu__item">
+          <a class="footer-menu__link" href="#">Разработчикам</a>
+        </li>
+        <li class="footer-menu__item">
+          <a class="footer-menu__link" href="#">Условия использования</a>
+        </li>
+      </ul>
+    </nav>
+    <p class="page-footer__copyright">
+      © 2001–2017  ООО «Яндекс»
+    </p>
+  </div>
 </footer>
 
-<script type="text/javascript" src="js/script.js"></script>
+<!-- Xiaomi Warm Floor -->
+<section class="modal modal--big ">
+  <div class="modal__inner">
+    <div class="modal__content">
+      <div class="modal__top">
+        <h3 class="modal__title">Xiaomi Warm Floor</h3>
+        <span class="modal__icon modal__icon--thermometer">
+          <span class="modal__icon-text">+23</span>
+        </span>
+      </div>
+      <p class="modal__info">Включено</p>
+      <div class="modal__bottom">
+        <div class="thermometer">
+          <div class="thermometer__circle">
+            <span class="thermometer__num">+23</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__button modal__button--yellow">Применить</button>
+      <button class="modal__button modal__button--white">Закрыть</button>
+    </div>
+  </div>
+</section>
+
+<!-- Xiaomi Yeelight LED Smart Bulb -->
+<section class="modal">
+  <div class="modal__inner">
+    <div class="modal__content">
+      <div class="modal__top">
+        <h3 class="modal__title">Xiaomi Yeelight LED Smart Bulb</h3>
+        <span class="modal__icon modal__icon--sun"></span>
+      </div>
+      <p class="modal__info">Включено</p>
+      <div class="modal__bottom">
+        <div class="modal__filter filter">
+          <div class="filter__wrap">
+            <button class="filter__item filter__item--active">Вручную</button>
+            <button class="filter__item">Дневной свет</button>
+            <button class="filter__item">Вечерний свет</button>
+            <button class="filter__item">Рассвет</button>
+          </div>
+        </div>
+
+        <div class="lamp lamp--light">
+
+        </div>
+
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__button modal__button--yellow">Применить</button>
+      <button class="modal__button modal__button--white">Закрыть</button>
+    </div>
+  </div>
+</section>
+
+<!-- Elgato Eve Degree Connected -->
+<section class="modal">
+  <div class="modal__inner">
+    <div class="modal__content">
+      <div class="modal__top">
+        <h3 class="modal__title">Elgato Eve Degree Connected</h3>
+        <span class="modal__icon modal__icon--thermometer">
+          <span class="modal__icon-text">+23</span>
+        </span>
+      </div>
+      <p class="modal__info">Включено</p>
+      <div class="modal__bottom">
+        <div class="modal__filter filter">
+          <div class="filter__wrap">
+            <button class="filter__item filter__item--active">Вручную</button>
+            <button class="filter__item">Холодно</button>
+            <button class="filter__item">Тепло</button>
+            <button class="filter__item">Жарко</button>
+          </div>
+        </div>
+
+        <div class="lamp lamp--color">
+
+        </div>
+
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__button modal__button--yellow">Применить</button>
+      <button class="modal__button modal__button--white">Закрыть</button>
+    </div>
+  </div>
+</section>
+
+<script src="js/script.min.js"></script>
 </body>
 </html>

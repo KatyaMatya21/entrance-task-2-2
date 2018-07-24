@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background-color: #f7f7f7;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.card__title {
+  margin: 0;
+  margin-top: auto;
+
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.card__info {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.card--sun {
+  &::before {
+    background-image: url("../images/icon_sun.svg");
+  }
+}
+
+.card--sun.card--active {
+  &::before {
+    background-image: url("../images/icon_sun_active.svg");
+  }
+}
+
+.card--schedule {
+  &::before {
+    background-image: url("../images/icon_scheduled.svg");
+  }
+}
+
+.card--thermometer {
+  &::before {
+    background-image: url("../images/icon_temperature.svg");
+  }
+}
+
+.card--thermometer.card--active {
+  &::before {
+    background-image: url("../images/icon_temperature_active.svg");
+  }
+}
+
+.status {
+  .card {
+    height: 120px;
+    margin-right: 15px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 15px;
+      margin-right: 0;
+    }
+
+    &:first-child {
+      @media (min-width: 768px) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.scenario {
+  .card {
+    height: 100px;
+    margin-right: 15px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 15px;
+    }
+
+    &:nth-child(3n) {
+      @media (min-width: 768px) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.device {
+  .card {
+    height: 120px;
+    margin-right: 15px;
+  }
+}

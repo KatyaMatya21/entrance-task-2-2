@@ -1,0 +1,29 @@
+.lamp {
+  width: 60px;
+  height: 336px;
+  margin: 0 auto;
+  margin-top: 25px;
+
+  border-radius: 35px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 60px;
+  }
+}
+
+.lamp--light {
+  background: linear-gradient(to bottom, #ffb100 0%, #ffe88c 100%);
+
+  @media (min-width: 768px) {
+    background: linear-gradient(to right, #ffe88c 0%, #ffb100 100%);
+  }
+}
+
+.lamp--color {
+  background: linear-gradient(to bottom, #F76B1C 0%, #FFD800 50%, #068FFF 100%);
+
+  @media (min-width: 768px) {
+    background-image: linear-gradient(to right, #F76B1C 0%, #FFD800 50%, #068FFF 100%);
+  }
+}

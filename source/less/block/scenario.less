@@ -1,0 +1,88 @@
+.scenario {
+  padding-top: 30px;
+
+  @media (min-width: 768px) {
+    position: relative;
+
+    padding-top: 0;
+  }
+}
+
+.scenario__wrap {
+  position: relative;
+  width: calc(100% + 40px);
+  height: 100px;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 340px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.scenario__list {
+  position: absolute;
+  top: 0;
+  left: 20px;
+
+  display: flex;
+
+  @media (min-width: 768px) {
+    left: 0;
+
+    flex-wrap: wrap;
+  }
+}
+
+.scenario__scroll {
+  position: absolute;
+
+  display: none;
+  width: 9px;
+  height: 14px;
+  padding: 5px;
+
+  background-image: url("../images/arrow.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+
+  opacity: 1;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+.scenario__scroll--left {
+  top: 1px;
+  right: 80px;
+}
+
+.scenario__scroll--right {
+  top: 0;
+  right: 50px;
+
+  transform: rotate(180deg);
+}
+
+.scenario__scroll--disabled {
+  opacity: 0.3;
+
+  &:hover,
+  &:focus {
+    opacity: 0.3;
+  }
+}

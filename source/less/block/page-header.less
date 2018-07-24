@@ -1,5 +1,42 @@
 .page-header {
-  height: 100px;
+  @media (min-width: 768px) {
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
 
-  background-color: red;
+.page-header__inner {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    padding-top: 33px;
+    padding-bottom: 33px;
+  }
+}
+
+.page-header__logo {
+  display: block;
+  width: 110px;
+  height: 37px;
+
+  @media (min-width: 768px) {
+    margin-right: 52px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.page-header__nav {
+  @media (min-width: 768px) {
+    max-width: 600px;
+  }
 }

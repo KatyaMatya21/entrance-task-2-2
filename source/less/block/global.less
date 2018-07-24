@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  color: #858585;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
