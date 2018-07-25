@@ -4,7 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
-var include = require("gulp-include");
+var fileinclude = require('gulp-file-include');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
@@ -12,6 +12,10 @@ var gulpSequence = require('gulp-sequence');
 
 gulp.task('html', function () {
   return gulp.src('./source/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest('./build'));
 });
 
@@ -31,7 +35,10 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
   return gulp.src('./source/js/script.js')
-    .pipe(include())
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./build/js'));
@@ -51,7 +58,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('source/*.html', ['html']);
+  gulp.watch('source/**/*.html', ['html']);
   gulp.watch('source/less/**/*.less', ['css']);
   gulp.watch('source/js/**/*.js', ['js']);
   gulp.watch('source/images/*', ['images']);

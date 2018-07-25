@@ -1,5 +1,13 @@
 .device {
-  padding-top: 35px;
+  padding-top: 20px;
+
+  @media (min-width: @tablet) {
+    padding-top: 0;
+  }
+
+  @media (min-width: @desktop) {
+    padding-top: 30px;
+  }
 }
 
 .device__top {
@@ -10,43 +18,69 @@
   align-items: center;
   margin-bottom: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  @media (min-width: @desktop) {
+    align-items: center;
   }
 
   .title {
-    margin-right: 15px;
+    margin-bottom: 0;
 
-    @media (min-width: 768px) {
-      margin-bottom: 0;
+    @media (min-width: @tablet) {
+      margin-right: 15px;
     }
   }
 }
 
 .device__bottom {
   position: relative;
-  width: 100%;
-  height: 150px;
+  width: calc(100% + 40px);
+  height: 140px;
+  margin-left: -20px;
 
   overflow-y: hidden;
   overflow-x: scroll;
+
+  @media (min-width: @tablet) {
+    width: calc(100% + 60px);
+    margin-left: -30px;
+  }
+
+  @media (min-width: @desktop) {
+    width: calc(100% + 80px);
+    height: 160px;
+    margin-left: -40px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .device__bottom-wrap {
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 20px;
 
   display: flex;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
+    left: 30px;
+  }
+
+  @media (min-width: @desktop) {
+    top: 10px;
     left: 40px;
   }
 }
 
 .device__filters {
   position: absolute;
-  top: 0;
+  top: -5px;
   right: -20px;
   z-index: 1;
 
@@ -54,7 +88,7 @@
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     position: relative;
 
     flex-direction: row;
@@ -80,7 +114,7 @@
 
       transform: rotate(90deg);
 
-      @media (min-width: 768px) {
+      @media (min-width: @tablet) {
         display: none;
       }
     }
@@ -91,7 +125,7 @@
   .filter__item {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: @tablet) {
       display: block;
     }
   }
@@ -123,7 +157,7 @@
 
   opacity: 1;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     display: block;
   }
 
@@ -134,15 +168,21 @@
 }
 
 .device__scroll--left {
-  top: 11px;
-  right: 80px;
+  right: 30px;
+
+  @media (min-width: @tablet) {
+    bottom: 10px;
+  }
 }
 
 .device__scroll--right {
-  top: 10px;
-  right: 50px;
+  right: 0;
 
   transform: rotate(180deg);
+
+  @media (min-width: @tablet) {
+    bottom: 11px;
+  }
 }
 
 .device__scroll--disabled {

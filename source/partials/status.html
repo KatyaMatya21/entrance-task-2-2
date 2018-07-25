@@ -1,0 +1,62 @@
+<section class="status columns__item">
+  <h2 class="title">Главное</h2>
+  <div class="status__display">
+    <div class="status__left">
+      <p class="status__greeting">Привет, Геннадий!</p>
+      <p class="status__info">Двери и окна закрыты, сигнализация включена.</p>
+      <ul class="status__temperature-list">
+        <li class="status__temperature">
+          <span class="status__type">Дома</span>
+          <span class="status__num">+23</span>
+        </li>
+        <li class="status__temperature status__temperature--icon">
+          <span class="status__type">За окном</span>
+          <span class="status__num">+19</span>
+        </li>
+      </ul>
+    </div>
+    <div class="status__right">
+      <div class="status__right-wrap">
+
+        @@include('card.html', {
+          "title": "Philips Cooler",
+          "info": "Начнет охлаждать в 16:30",
+          "type": "card--thermometer",
+          "status": "",
+          "data-type": "",
+          "data-modal": ""
+        })
+
+        @@include('card.html', {
+          "title": "Xiaomi Yeelight LED Smart Bulb",
+          "info": "Включится в 17:00",
+          "type": "card--sun",
+          "status": "",
+          "data-type": "",
+          "data-modal": ""
+        })
+
+        @@include('card.html', {
+          "title": "Philips Cooler",
+          "info": "Начнет охлаждать в 16:30",
+          "type": "card--sun",
+          "status": "",
+          "data-type": "",
+          "data-modal": ""
+        })
+
+        @@include('card.html', {
+          "title": "Xiaomi Yeelight LED Smart Bulb",
+          "info": "Включится в 17:00",
+          "type": "card--thermometer",
+          "status": "",
+          "data-type": "",
+          "data-modal": ""
+        })
+
+      </div>
+    </div>
+    <button class="status__scroll status__scroll--down"><span class="visually-hidden">Прокрутить вниз</span></button>
+    <button class="status__scroll status__scroll--up"><span class="visually-hidden">Прокрутить вверх</span></button>
+  </div>
+</section>

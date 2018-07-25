@@ -1,15 +1,17 @@
 .page-header {
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     border-bottom: 1px solid #f0f0f0;
   }
 }
 
 .page-header__inner {
+  display: flex;
+  justify-content: space-between;
   padding-top: 12px;
   padding-bottom: 12px;
 
-  @media (min-width: 768px) {
-    display: flex;
+  @media (min-width: @tablet) {
+    justify-content: flex-start;
     align-items: center;
     padding-top: 33px;
     padding-bottom: 33px;
@@ -21,7 +23,7 @@
   width: 110px;
   height: 37px;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     margin-right: 52px;
   }
 
@@ -36,7 +38,7 @@
 }
 
 .page-header__nav {
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     max-width: 600px;
   }
 }

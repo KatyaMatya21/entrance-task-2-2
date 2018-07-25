@@ -5,7 +5,7 @@
 
   display: flex;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     left: 0;
   }
 }
@@ -18,11 +18,11 @@
   line-height: 15px;
   font-weight: normal;
 
-  background-color: #f7f7f7;
+  background-color: @gray-light;
   border: none;
   border-radius: 15px;
 
-  @media (min-width: 768px) {
+  @media (min-width: @tablet) {
     font-weight: bold;
   }
 
@@ -32,19 +32,19 @@
 
   &:hover,
   &:focus {
-    background-color: #e2e2e2;
+    background-color: @gray;
   }
 
   &:active {
-    background-color: #ffd93e;
+    background-color: @yellow;
   }
 }
 
 .filter__item--active {
-  background-color: #ffd93e;
+  background-color: @yellow;
 
   &:hover,
   &:focus {
-    background-color: #ffd93e;
+    background-color: @yellow;
   }
 }

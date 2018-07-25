@@ -1,29 +1,114 @@
 .lamp {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   width: 60px;
   height: 336px;
   margin: 0 auto;
   margin-top: 25px;
+  padding: 20px 15px;
+
+  box-sizing: border-box;
 
   border-radius: 35px;
 
-  @media (min-width: 768px) {
+  overflow: hidden;
+  user-select: none;
+
+  @media (min-width: @tablet) {
+    flex-direction: row-reverse;
     width: 100%;
     height: 60px;
+    padding: 15px 20px;
   }
 }
 
 .lamp--light {
-  background: linear-gradient(to bottom, #ffb100 0%, #ffe88c 100%);
+  .gradient-two-colors (to bottom, #ffb100, #ffe88c);
 
-  @media (min-width: 768px) {
-    background: linear-gradient(to right, #ffe88c 0%, #ffb100 100%);
+  @media (min-width: @tablet) {
+    .gradient-two-colors (to right, #ffe88c, #ffb100);
   }
 }
 
 .lamp--color {
-  background: linear-gradient(to bottom, #F76B1C 0%, #FFD800 50%, #068FFF 100%);
+  .gradient-three-colors (to bottom, #f76b1c, #ffd800, #068fff);
 
-  @media (min-width: 768px) {
-    background-image: linear-gradient(to right, #F76B1C 0%, #FFD800 50%, #068FFF 100%);
+  @media (min-width: @tablet) {
+    .gradient-three-colors (to right, #068fff, #ffd800, #f76b1c);
   }
+}
+
+.lamp__button {
+  position: absolute;
+  top: 50%;
+  left: -4px;
+
+  display: block;
+  width: 60px;
+  height: 60px;
+
+  background-color: transparent;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  @media (min-width: @tablet) {
+    top: -4px;
+    left: 50%;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 54px;
+    height: 54px;
+
+    background-color: transparent;
+    border: 3px solid @text-dark;
+    border-radius: 50%;
+    opacity: 0.1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::before {
+      opacity: 0.2;
+    }
+  }
+}
+
+.lamp__degree {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.lamp__lightness {
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.lamp__lightness--small {
+  background-image: url("../images/icon_sun_white_small.svg");
+}
+
+.lamp__lightness--big {
+  background-image: url("../images/icon_sun_white.svg");
 }

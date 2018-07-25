@@ -1,0 +1,24 @@
+.gradient-two-colors (@type, @first, @second) {
+  background: linear-gradient(@type, @first 0%, @second 100%);
+}
+
+.gradient-three-colors (@type, @first, @second, @third) {
+  background: linear-gradient(@type, @first 0%, @second 50%, @third 100%);
+}
+
+.container () {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: @tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: @desktop) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

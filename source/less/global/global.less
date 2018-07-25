@@ -1,30 +1,26 @@
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
 body {
+  position: relative;
   margin: 0;
   padding: 0;
+  min-width: 320px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 
   font-family: "Arial", sans-serif;
   font-size: 12px;
   line-height: 14px;
   font-weight: normal;
-  color: #858585;
-
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
+  color: @text-light;
 }
 
 .container {
-  max-width: 1366px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @media (min-width: 768px) {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+  .container();
 }
 
 .title {
@@ -34,7 +30,15 @@ body {
   font-size: 18px;
   line-height: 21px;
   font-weight: bold;
-  color: #333333;
+  color: @text-dark;
+
+  @media (min-width: @tablet) {
+    margin-top: 30px;
+  }
+
+  @media (min-width: @desktop) {
+    margin-top: 0;
+  }
 }
 
 .visually-hidden:not(:focus):not(:active),
