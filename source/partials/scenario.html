@@ -1,8 +1,8 @@
-<section class="scenario columns__item">
+<section class="scenario columns__item js-scroll">
   <h2 class="title">Избранные сценарии</h2>
-  <button class="scenario__scroll scenario__scroll--left scenario__scroll--disabled"><span class="visually-hidden">Влево</span></button>
-  <button class="scenario__scroll scenario__scroll--right scenario__scroll--disabled"><span class="visually-hidden">Вправо</span></button>
-  <div class="scenario__wrap">
+  <button class="scroll-button scroll-button--left scroll-button--disabled"><span class="visually-hidden">Влево</span></button>
+  <button class="scroll-button scroll-button--right scroll-button--disabled"><span class="visually-hidden">Вправо</span></button>
+  <div class="scenario__wrap js-scroll-container">
     <div class="scenario__list">
 
       @@include('card.html', {
@@ -81,6 +81,33 @@
         "title": "Включить ночник в детской",
         "info": "",
         "type": "card--sun",
+        "status": "",
+        "data-type": "",
+        "data-modal": ""
+      })
+
+      @@include('card.html', {
+        "title": "Включить зажигательную музыку",
+        "info": "",
+        "type": "card--thermometer",
+        "status": "",
+        "data-type": "",
+        "data-modal": ""
+      })
+
+      @@include('card.html', {
+        "title": "Включить зажигательную музыку",
+        "info": "",
+        "type": "card--thermometer",
+        "status": "",
+        "data-type": "",
+        "data-modal": ""
+      })
+
+      @@include('card.html', {
+        "title": "Включить зажигательную музыку",
+        "info": "",
+        "type": "card--thermometer",
         "status": "",
         "data-type": "",
         "data-modal": ""

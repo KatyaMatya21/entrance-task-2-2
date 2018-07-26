@@ -6,7 +6,7 @@
   }
 
   @media (min-width: @desktop) {
-    padding-top: 30px;
+    padding-top: 20px;
   }
 }
 
@@ -144,58 +144,5 @@
 
       transform: rotate(-90deg);
     }
-  }
-}
-
-.device__scroll {
-  position: absolute;
-
-  display: none;
-  width: 9px;
-  height: 14px;
-  padding: 5px;
-
-  background-color: transparent;
-  background-image: url("../images/arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-
-  opacity: 1;
-
-  @media (min-width: @tablet) {
-    display: block;
-  }
-
-  &:hover,
-  &:focus {
-    opacity: 0.5;
-  }
-}
-
-.device__scroll--left {
-  right: 30px;
-
-  @media (min-width: @tablet) {
-    bottom: 10px;
-  }
-}
-
-.device__scroll--right {
-  right: 0;
-
-  transform: rotate(180deg);
-
-  @media (min-width: @tablet) {
-    bottom: 11px;
-  }
-}
-
-.device__scroll--disabled {
-  opacity: 0.3;
-
-  &:hover,
-  &:focus {
-    opacity: 0.3;
   }
 }
