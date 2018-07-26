@@ -24,6 +24,7 @@
   height: 120px;
   margin-right: -20px;
   margin-left: -20px;
+  overflow: -moz-scrollbars-none;
 
   overflow-x: scroll;
   overflow-y: hidden;
@@ -37,6 +38,7 @@
   }
 
   @media (min-width: @desktop) {
+    width: calc(100% + 30px);
     margin-right: 0;
     margin-left: 0;
     padding-top: 10px;
