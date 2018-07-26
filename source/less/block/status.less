@@ -17,8 +17,8 @@
   position: relative;
 
   background-image: url("../images/bg@1x.png");
-  background-position: 0 0;
   background-repeat: no-repeat;
+  background-position: 0 0;
   background-size: cover;
   border-radius: 20px;
 
@@ -36,9 +36,10 @@
   margin: 0;
   margin-bottom: 5px;
 
+  font-weight: bold;
+
   font-size: 18px;
   line-height: 21px;
-  font-weight: bold;
   color: @text-dark;
 
   @media (min-width: @tablet) {
@@ -95,9 +96,10 @@
 .status__num {
   display: block;
 
+  font-weight: bold;
+
   font-size: 24px;
   line-height: 28px;
-  font-weight: bold;
   color: @text-dark;
 
   @media (min-width: @tablet) {
@@ -123,8 +125,8 @@
       height: 20px;
 
       background-image: url("../images/cloud-drizzle.svg");
-      background-position: center;
       background-repeat: no-repeat;
+      background-position: center;
       background-size: 100%;
 
       transform: translateY(-50%);
@@ -153,9 +155,9 @@
   width: calc(100% - 40px);
   height: 120px;
   padding: 0 20px 20px;
+  overflow-x: scroll;
 
   overflow-y: hidden;
-  overflow-x: scroll;
   -ms-overflow-style: none;
 
   @media (min-width: @tablet) {
@@ -193,8 +195,9 @@
   height: 16px;
   padding: 10px;
 
-  background-image: url("../images/arrows.svg");
   background-color: transparent;
+
+  background-image: url("../images/arrows.svg");
   background-repeat: no-repeat;
   background-position: center;
   border: none;
@@ -212,8 +215,8 @@
 }
 
 .status__scroll--up {
-  bottom: 10px;
   right: 105px;
+  bottom: 10px;
 }
 
 .status__scroll--down {

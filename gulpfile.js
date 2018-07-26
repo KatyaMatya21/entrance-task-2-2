@@ -9,6 +9,8 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
 var gulpSequence = require('gulp-sequence');
+var stylelint = require('gulp-stylelint');
+var prettify = require('gulp-html-prettify');
 
 gulp.task('html', function () {
   return gulp.src('./source/*.html')
@@ -16,10 +18,14 @@ gulp.task('html', function () {
       prefix: '@@',
       basepath: '@file'
     }))
+    .pipe(prettify({
+      indent_char: ' ',
+      indent_size: 2
+    }))
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('css', function () {
+gulp.task('css', ['stylelint-fix'], function () {
   return gulp.src('./source/less/style.less')
     .pipe(less())
     .pipe(sourcemaps.init())
@@ -27,6 +33,7 @@ gulp.task('css', function () {
       browsers: ['last 4 versions'],
       cascade: false
     }))
+    .pipe(gulp.dest('./build/css'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())
@@ -39,8 +46,11 @@ gulp.task('js', function () {
       prefix: '@@',
       basepath: '@file'
     }))
+    .pipe(sourcemaps.init())
+    .pipe(gulp.dest('./build/js'))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/js'));
 });
 
@@ -66,6 +76,14 @@ gulp.task('watch', function () {
 
 gulp.task('clean', function () {
   return del(['build/**/*']);
+});
+
+gulp.task('stylelint-fix', function() {
+  return gulp.src('./source/less/**/*.less')
+    .pipe(stylelint({
+      fix: true
+    }))
+    .pipe(gulp.dest('./source/less/'));
 });
 
 gulp.task('default', gulpSequence('clean',['html', 'css', 'js', 'images']));

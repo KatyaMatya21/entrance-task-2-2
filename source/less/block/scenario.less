@@ -19,24 +19,25 @@
 
 .scenario__wrap {
   position: relative;
+
   width: calc(100% + 40px);
   height: 120px;
-  margin-left: -20px;
   margin-right: -20px;
+  margin-left: -20px;
+  overflow-x: scroll;
 
   overflow-y: hidden;
-  overflow-x: scroll;
 
   @media (min-width: @tablet) {
     width: calc(100% + 30px);
     height: 350px;
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
   }
 
   @media (min-width: @desktop) {
-    padding-left: 10px;
     padding-top: 10px;
+    padding-left: 10px;
   }
 
   &::-webkit-scrollbar {
@@ -54,8 +55,9 @@
   @media (min-width: @tablet) {
     left: 0;
 
-    flex-wrap: wrap;
     flex-direction: column;
+
+    flex-wrap: wrap;
 
     height: 350px;
   }
@@ -74,8 +76,9 @@
   height: 14px;
   padding: 5px;
 
-  background-image: url("../images/arrow.svg");
   background-color: transparent;
+
+  background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
   border: none;

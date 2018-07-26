@@ -2,20 +2,21 @@
   position: relative;
 
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+
+  box-sizing: border-box;
   width: 60px;
   height: 336px;
   margin: 0 auto;
   margin-top: 25px;
   padding: 20px 15px;
 
-  box-sizing: border-box;
+  overflow: hidden;
 
   border-radius: 35px;
 
-  overflow: hidden;
   user-select: none;
 
   @media (min-width: @tablet) {
@@ -89,9 +90,9 @@
 }
 
 .lamp__degree {
+  font-weight: bold;
   font-size: 18px;
   line-height: 21px;
-  font-weight: bold;
   color: #ffffff;
 }
 
@@ -100,8 +101,9 @@
   width: 30px;
   height: 30px;
 
-  background-position: center;
   background-repeat: no-repeat;
+
+  background-position: center;
   background-size: 100%;
 }
 
