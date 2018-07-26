@@ -2,14 +2,6 @@
   visibility: hidden;
 }
 
-.modal--big {
-  .modal__content {
-    @media (min-width: @tablet) {
-      height: 343px;
-    }
-  }
-}
-
 .modal--opened {
   position: absolute;
   top: 0;
@@ -42,7 +34,8 @@
   transition: transform 0.25s;
 
   @media (min-width: @tablet) {
-    top: 100px;
+    position: fixed;
+    top: 50px;
 
     width: 630px;
   }
@@ -51,7 +44,7 @@
 .modal__content {
   box-sizing: border-box;
   width: 100%;
-  height: 492px;
+  height: auto;
   margin-bottom: 15px;
   padding: 20px;
 
@@ -60,7 +53,7 @@
 
   @media (min-width: @tablet) {
     width: 630px;
-    height: 238px;
+    height: auto;
     margin-bottom: 20px;
     padding: 25px;
   }
