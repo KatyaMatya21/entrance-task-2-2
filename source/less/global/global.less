@@ -12,13 +12,17 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
+  padding-top: 62px;
 
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
-
   font-family: "Arial", sans-serif;
   color: @text-light;
+
+  @media (min-width: @tablet) {
+    padding-top: 0;
+  }
 }
 
 .container {
