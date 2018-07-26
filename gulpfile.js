@@ -25,7 +25,7 @@ gulp.task('html', function () {
     .pipe(gulp.dest('./build'));
 });
 
-gulp.task('css', ['stylelint-fix'], function () {
+gulp.task('css', function () {
   return gulp.src('./source/less/style.less')
     .pipe(less())
     .pipe(sourcemaps.init())
@@ -86,4 +86,4 @@ gulp.task('stylelint-fix', function() {
     .pipe(gulp.dest('./source/less/'));
 });
 
-gulp.task('default', gulpSequence('clean',['html', 'css', 'js', 'images']));
+gulp.task('default', gulpSequence('clean', 'stylelint-fix', ['html', 'css', 'js', 'images']));

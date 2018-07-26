@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+<div class="wrap">
+  @@include('partials/page-header.html')
+  <main>
+    <div class="columns container">
+      @@include('partials/status.html')
+      @@include('partials/scenario.html')
+    </div>
 
-@@include('partials/page-header.html')
-<main>
-  <div class="columns container">
-    @@include('partials/status.html')
-    @@include('partials/scenario.html')
-  </div>
+    @@include('partials/device.html')
+  </main>
 
-  @@include('partials/device.html')
-</main>
-
-@@include('partials/page-footer.html')
+  @@include('partials/page-footer.html')
+</div>
 @@include('partials/modal-degree.html')
 @@include('partials/modal-light.html')
 @@include('partials/modal-color.html')

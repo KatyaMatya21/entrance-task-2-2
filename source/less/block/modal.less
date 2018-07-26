@@ -1,5 +1,5 @@
 .modal {
-  display: none;
+  visibility: hidden;
 }
 
 .modal--big {
@@ -16,22 +16,30 @@
   left: 0;
   z-index: 10;
 
-  display: block;
-
   width: 100%;
   height: 100%;
 
   background-color: rgba(51, 51, 51, 0.5);
+
+  visibility: visible;
+
+  .modal__inner {
+    transform: scale(1);
+  }
 }
 
 .modal__inner {
   position: absolute;
   top: 20px;
-  left: 50%;
+  right: 0;
+  left: 0;
 
   width: calc(100% - 40px);
+  margin: 0 auto;
 
-  transform: translateX(-50%);
+  transform: scale(0.2);
+
+  transition: transform 0.25s;
 
   @media (min-width: @tablet) {
     top: 100px;
@@ -41,7 +49,6 @@
 }
 
 .modal__content {
-
   box-sizing: border-box;
   width: 100%;
   height: 492px;
@@ -146,19 +153,24 @@
   position: relative;
 
   width: calc(100% + 40px);
-  height: 30px;
+  height: 50px;
   margin-top: 15px;
   margin-right: -20px;
   margin-left: -20px;
-  overflow-x: scroll;
 
+  overflow-x: scroll;
   overflow-y: hidden;
+  -ms-overflow-style: none;
 
   @media (min-width: @tablet) {
     width: 100%;
     margin-top: 20px;
     margin-right: 0;
     margin-left: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
   }
 }
 

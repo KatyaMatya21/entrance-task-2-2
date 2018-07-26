@@ -28,6 +28,7 @@
     var typeModal = event.currentTarget.dataset.modal;
     this._activeModal = this.findModal(typeModal);
     this._activeModal.classList.add('modal--opened');
+    document.querySelector('.wrap').classList.add('wrap--blur');
     this._closeListener = this.onModalCloseClick.bind(this);
     this._activeModal.querySelector('.js-close').addEventListener('click', this._closeListener);
   };
@@ -38,6 +39,7 @@
   ModalsController.prototype.onModalCloseClick = function() {
     this._activeModal.querySelector('.js-close').removeEventListener('click', this._closeListener);
     this._activeModal.classList.remove('modal--opened');
+    document.querySelector('.wrap').classList.remove('wrap--blur');
     this._activeModal = null;
     this._closeListener = null;
   };
