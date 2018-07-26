@@ -106,11 +106,11 @@
           "padding-right",
           "padding-bottom",
           "padding-left",
-          "overflow",
           "-ms-overflow-x",
           "overflow-x",
           "-ms-overflow-y",
           "overflow-y",
+          "overflow",
           "-webkit-overflow-scrolling",
           "-ms-overflow-style"
         ]
