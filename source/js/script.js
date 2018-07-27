@@ -1,3 +1,6 @@
 @@include('module/menu.js')
 @@include('module/modal.js')
+@@include('module/filters.js')
+@@include('module/modal-filters.js')
 @@include('module/scroll-horizontal.js')
+@@include('module/scroll-vertical.js')

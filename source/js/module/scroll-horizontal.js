@@ -1,7 +1,7 @@
 (function () {
 
   /**
-   *
+   * Scroll controller
    * @param element
    * @constructor
    */
@@ -23,11 +23,12 @@
     this._btnRight = this._element.querySelector('.scroll-button--right');
     this._btnRight.addEventListener('click', this.onBtnRightClick.bind(this));
     this._container.addEventListener('scroll', this.updateScrollState.bind(this));
+    window.addEventListener('resize', this.updateScrollState.bind(this));
     this.updateScrollState();
   };
 
   /**
-   *
+   * Updates buttons states
    */
   ScrollController.prototype.updateScrollState = function () {
     var containerWidth = this._container.offsetWidth;
@@ -46,12 +47,14 @@
       } else {
         this.setBtnRightEnabled(true);
       }
+    } else {
+      this.setBtnRightEnabled(false);
+      this.setBtnLeftEnabled(false);
     }
-
   };
 
   /**
-   *
+   * Sets left button state
    * @param flag
    */
   ScrollController.prototype.setBtnLeftEnabled = function (flag) {
@@ -63,7 +66,7 @@
   };
 
   /**
-   *
+   * Sets right button state
    * @param flag
    */
   ScrollController.prototype.setBtnRightEnabled = function (flag) {
@@ -75,7 +78,7 @@
   };
 
   /**
-   *
+   * Left button click event handler
    */
   ScrollController.prototype.onBtnLeftClick = function (event) {
     var flag = event.target.classList.contains('scroll-button--disabled');
@@ -89,7 +92,7 @@
   };
 
   /**
-   *
+   * Right button click event handler
    */
   ScrollController.prototype.onBtnRightClick = function (event) {
     var flag = event.target.classList.contains('scroll-button--disabled');
@@ -102,6 +105,11 @@
     this.scrollTo(this._container, newScrollValue, 500);
   };
 
+  /**
+   * Calculates scroll amount for page
+   * @param direction
+   * @returns {number}
+   */
   ScrollController.prototype.getScrollValue = function (direction) {
     var itemW = 200 + 15;
     var containerW = this._container.offsetWidth;
@@ -117,7 +125,7 @@
   };
 
   /**
-   *
+   * Animates scroll
    * @param element
    * @param to
    * @param duration
@@ -141,10 +149,14 @@
     animateScroll();
   };
 
-  //t = current time
-  //b = start value
-  //c = change in value
-  //d = duration
+  /**
+   * Animation curve
+   * @param t
+   * @param b
+   * @param c
+   * @param d
+   * @returns {*}
+   */
   ScrollController.prototype.easeInOutQuad = function (t, b, c, d) {
     t /= d / 2;
     if (t < 1) return c / 2 * t * t + b;
