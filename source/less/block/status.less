@@ -190,11 +190,12 @@
 
 .status__scroll {
   position: absolute;
+  right: 110px;
+  bottom: 10px;
 
   display: none;
   width: 16px;
   height: 16px;
-  padding: 10px;
 
   background-color: transparent;
   background-image: url("../images/arrows.svg");
@@ -207,21 +208,4 @@
   @media (min-width: @tablet) {
     display: block;
   }
-
-  &:hover,
-  &:focus {
-    opacity: 0.5;
-  }
-}
-
-.status__scroll--up {
-  right: 105px;
-  bottom: 10px;
-}
-
-.status__scroll--down {
-  top: 10px;
-  right: 115px;
-
-  transform: rotate(180deg);
 }

@@ -1,12 +1,12 @@
 .device {
-  padding-top: 20px;
+  padding-top: 10px;
 
   @media (min-width: @tablet) {
     padding-top: 0;
   }
 
   @media (min-width: @desktop) {
-    padding-top: 20px;
+    padding-top: 15px;
   }
 }
 
@@ -20,19 +20,31 @@
 
   @media (min-width: @tablet) {
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: baseline;
+    margin-top: 15px;
   }
 
   @media (min-width: @desktop) {
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .title {
+    margin-top: 0;
     margin-bottom: 0;
 
-    @media (min-width: @tablet) {
+    @media (min-width: @desktop) {
       margin-right: 15px;
     }
+  }
+
+  .scroll-button--left {
+    top: 4px;
+  }
+
+  .scroll-button--right {
+    top: 3px;
   }
 }
 
