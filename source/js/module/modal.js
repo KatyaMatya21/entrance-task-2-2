@@ -22,7 +22,7 @@
   };
 
   /**
-   *  Opens modal, button click handler to close modal
+   * Opens modal, button click handler to close modal
    */
   ModalsController.prototype.onModalButtonClick = function (event) {
     var typeModal = event.currentTarget.dataset.modal;
@@ -31,6 +31,7 @@
     document.querySelector('.wrap').classList.add('wrap--blur');
     this._closeListener = this.onModalCloseClick.bind(this);
     this._activeModal.querySelector('.js-close').addEventListener('click', this._closeListener);
+    window.addEventListener("keydown", this.onModalCloseEsc.bind(this));
   };
 
   /**
@@ -42,6 +43,24 @@
     document.querySelector('.wrap').classList.remove('wrap--blur');
     this._activeModal = null;
     this._closeListener = null;
+  };
+
+  /**
+   * Closes modal, removes button handler closing modal by esc
+   * @param event
+   */
+  ModalsController.prototype.onModalCloseEsc = function (event) {
+    if (event.keyCode === 27) {
+      event.preventDefault();
+
+      if (this._activeModal && this._activeModal.classList.contains("modal--opened")) {
+        this._activeModal.querySelector('.js-close').removeEventListener('click', this._closeListener);
+        this._activeModal.classList.remove('modal--opened');
+        document.querySelector('.wrap').classList.remove('wrap--blur');
+        this._activeModal = null;
+        this._closeListener = null;
+      }
+    }
   };
 
   /**
