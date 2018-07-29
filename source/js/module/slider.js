@@ -139,6 +139,8 @@
       this._button.style.left = newLeft + 'px';
     }
 
+    this._controls.querySelector('.filter__item--active').classList.remove('filter__item--active');
+    this._controls.querySelector('.filter__item:first-child').classList.add('filter__item--active');
   };
 
   /**
@@ -165,6 +167,9 @@
       var newLeft = this.getCoordinate(touch.pageX, this._element.getBoundingClientRect().left, this._element.offsetWidth, this._button.offsetWidth);
       this._button.style.left = newLeft + 'px';
     }
+
+    this._controls.querySelector('.filter__item--active').classList.remove('filter__item--active');
+    this._controls.querySelector('.filter__item:first-child').classList.add('filter__item--active');
   };
 
   /**
