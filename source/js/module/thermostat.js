@@ -1,3 +1,5 @@
+// Модифицированная версия виджета https://codepen.io/dalhundal/pen/KpabZB
+
 var thermostatDial = (function () {
 
   /*
