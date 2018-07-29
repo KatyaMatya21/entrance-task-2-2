@@ -4,3 +4,4 @@
 @@include('module/scroll-horizontal.js')
 @@include('module/scroll-vertical.js')
 @@include('module/slider.js')
+@@include('module/thermostat.js')

@@ -1,0 +1,92 @@
+.thermostat {
+  position: relative;
+
+  width: 235px;
+  height: 235px;
+  margin: 50px auto;
+
+  @media (min-width: @tablet) {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.dial {
+  user-select: none;
+
+  &__shape {
+    fill: transparent;
+  }
+
+  &__editableIndicator {
+    opacity: 0;
+
+    transition: opacity 0.5s;
+
+    fill: #ffffff;
+    fill-rule: evenodd;
+  }
+
+  &--edit {
+    .dial__editableIndicator {
+      opacity: 1;
+    }
+  }
+
+  &--state {
+    &--off {
+      .dial__shape {
+        fill: transparent;
+      }
+    }
+  }
+
+  &__ticks {
+    path {
+      fill: rgba(51, 51, 51, 0.69);
+
+      &.active {
+        fill: rgba(245, 166, 35, 0.69);
+      }
+    }
+  }
+
+  text {
+    fill: @text-dark;
+    text-anchor: middle;
+    alignment-baseline: central;
+  }
+
+  &__lbl {
+    &--target {
+      font-weight: bold;
+      font-size: 112px;
+      line-height: 77px;
+      color: @text-dark;
+
+      &--half {
+        display: none;
+
+        font-weight: bold;
+        font-size: 40px;
+
+        opacity: 0;
+
+        transition: opacity 0.1s;
+
+        &.shown {
+          opacity: 1;
+
+          transition: opacity 0s;
+        }
+      }
+    }
+
+    &--ambient {
+      display: none;
+
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+}
