@@ -9,7 +9,6 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
 var gulpSequence = require('gulp-sequence');
-var stylelint = require('gulp-stylelint');
 var prettify = require('gulp-html-prettify');
 
 gulp.task('html', function () {
@@ -78,12 +77,4 @@ gulp.task('clean', function () {
   return del(['build/**/*']);
 });
 
-gulp.task('stylelint-fix', function () {
-  return gulp.src('./source/less/**/*.less')
-    .pipe(stylelint({
-      fix: true
-    }))
-    .pipe(gulp.dest('./source/less/'));
-});
-
-gulp.task('default', gulpSequence('clean', 'stylelint-fix', ['html', 'css', 'js', 'images']));
+gulp.task('default', gulpSequence('clean', ['html', 'css', 'js', 'images']));
