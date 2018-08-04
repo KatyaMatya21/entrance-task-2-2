@@ -56,9 +56,10 @@
    * @param value
    */
   SliderController.prototype.setSliderValue = function (value) {
+    var valuePX;
 
     if (this.isMobile()) {
-      var valuePX = this._element.offsetHeight - (this._element.offsetHeight / 100 * value);
+      valuePX = this._element.offsetHeight - (this._element.offsetHeight / 100 * value);
 
       if (
         (valuePX > this._button.offsetHeight / 2) ||
@@ -79,7 +80,7 @@
 
     } else {
 
-      var valuePX = this._element.offsetWidth / 100 * value;
+      valuePX = this._element.offsetWidth / 100 * value;
 
       if (
         (valuePX > this._button.offsetWidth / 2) ||
@@ -131,7 +132,6 @@
     }
 
     if (this.isMobile()) {
-      console.log(event.pageY);
       var newTop = this.getCoordinate(event.clientY, this._element.getBoundingClientRect().top, this._element.offsetHeight, this._button.offsetHeight);
       this._button.style.top = newTop + 'px';
     } else {

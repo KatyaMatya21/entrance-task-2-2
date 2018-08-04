@@ -48,20 +48,6 @@ var thermostatDial = (function () {
     }).join(' ') + 'Z';
   }
 
-  function circleToPath(cx, cy, r) {
-    return [
-      "M", cx, ",", cy,
-      "m", 0 - r, ",", 0,
-      "a", r, ",", r, 0, 1, ",", 0, r * 2, ",", 0,
-      "a", r, ",", r, 0, 1, ",", 0, 0 - r * 2, ",", 0,
-      "z"
-    ].join(' ').replace(/\s,\s/g, ",");
-  }
-
-  function donutPath(cx, cy, rOuter, rInner) {
-    return circleToPath(cx, cy, rOuter) + " " + circleToPath(cx, cy, rInner);
-  }
-
   // Restrict a number to a min + max range
   function restrictToRange(val, min, max) {
     if (val < min) return min;
@@ -94,8 +80,7 @@ var thermostatDial = (function () {
       minValue: options.minValue || 0, // Minimum value for target temperature
       maxValue: options.maxValue || 30, // Maximum value for target temperature
       numTicks: options.numTicks || 120, // Number of tick lines to display around the dial
-      onSetTargetTemperature: options.onSetTargetTemperature || function () {
-      }, // Function called when new target temperature set by the dial
+      onSetTargetTemperature: options.onSetTargetTemperature || function () {} // Function called when new target temperature set by the dial
     };
 
     /*
@@ -107,7 +92,7 @@ var thermostatDial = (function () {
       radius: options.diameter / 2,
       ticksOuterRadius: options.diameter / 30,
       ticksInnerRadius: options.diameter / 8,
-      dragLockAxisDistance: 15,
+      dragLockAxisDistance: 15
     };
     properties.lblAmbientPosition = [properties.radius, properties.ticksOuterRadius - (properties.ticksOuterRadius - properties.ticksInnerRadius) / 2];
     properties.offsetDegrees = 180 - (360 - properties.tickDegrees) / 2;
@@ -152,20 +137,6 @@ var thermostatDial = (function () {
       viewBox: '0 0 ' + options.diameter + ' ' + options.diameter,
       class: 'dial'
     }, targetElement);
-
-    // CIRCULAR DIAL
-    var circle = createSVGElement('circle', {
-      cx: properties.radius,
-      cy: properties.radius,
-      r: properties.radius,
-      class: 'dial__shape'
-    }, svg);
-
-    // EDITABLE INDICATOR
-    var editCircle = createSVGElement('path', {
-      d: donutPath(properties.radius, properties.radius, properties.radius - 4, properties.radius - 8),
-      class: 'dial__editableIndicator',
-    }, svg);
 
     /*
      * Ticks
@@ -264,7 +235,7 @@ var thermostatDial = (function () {
         lblAmbient_text.nodeValue += '⁵';
       }
       var peggedValue = restrictToRange(self.ambient_temperature, options.minValue, options.maxValue);
-      degs = properties.tickDegrees * (peggedValue - options.minValue) / properties.rangeValue - properties.offsetDegrees;
+      var degs = properties.tickDegrees * (peggedValue - options.minValue) / properties.rangeValue - properties.offsetDegrees;
       if (peggedValue > self.target_temperature) {
         degs += 8;
       } else {

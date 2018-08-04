@@ -78,7 +78,7 @@ gulp.task('clean', function () {
   return del(['build/**/*']);
 });
 
-gulp.task('stylelint-fix', function() {
+gulp.task('stylelint-fix', function () {
   return gulp.src('./source/less/**/*.less')
     .pipe(stylelint({
       fix: true
